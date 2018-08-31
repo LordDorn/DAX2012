@@ -1,0 +1,8 @@
+--Дерево категорий с вспомогательной таблицей
+select
+  t.CATEGORY, cat1.PREFIX, cat1.NAME,
+	t.PARENTCATEGORY, cat2.PREFIX, cat2.NAME
+from ECORESCATEGORYTREE as t
+join ECORESCATEGORY as cat1 on cat1.RECID = t.CATEGORY
+join ECORESCATEGORY as cat2 on cat2.RECID = t.PARENTCATEGORY
+where t.PARENTCATEGORY = 5637154413
